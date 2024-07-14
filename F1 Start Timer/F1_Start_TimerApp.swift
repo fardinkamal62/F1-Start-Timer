@@ -11,9 +11,7 @@ import SwiftData
 @main
 struct F1_Start_TimerApp: App {
     var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
+        let schema = Schema([Item.self])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
         do {
@@ -28,5 +26,6 @@ struct F1_Start_TimerApp: App {
             ContentView()
         }
         .modelContainer(sharedModelContainer)
+        .windowResizability(.contentSize)
     }
 }
